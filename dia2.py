@@ -16,6 +16,7 @@ def generar_clave():
 def obtener_clave():
     with open('clave.key', 'rb') as file:
         return file.read()
+    
 
 # Guardar las cuentas en un archivo JSON
 def guardar_credenciales():
@@ -78,10 +79,10 @@ def iniciar_sesion():
         # Automatizar la apertura del cliente dependiendo del juego seleccionado
         if juego_seleccionado == "League of Legends":
             pyautogui.hotkey('win', 'r')  # Abre la ventana de ejecutar
-            pyautogui.write("C:/Riot Games/Riot Client/RiotClientServices.exe")  # Ruta del cliente LoL
+            pyautogui.write("C:/Users/Public/Desktop/League of Legends.lnk")  # Ruta del cliente LoL
         elif juego_seleccionado == "Valorant":
             pyautogui.hotkey('win', 'r')  # Abre la ventana de ejecutar
-            pyautogui.write("C:/Riot Games/Valorant/Valorant.exe")  # Ruta del cliente Valorant
+            pyautogui.write("C:/Users/Public/Desktop/VALORANT.lnk")  # Ruta del cliente Valorant
 
         pyautogui.press('enter')
 
@@ -93,13 +94,7 @@ def iniciar_sesion():
         pyautogui.write(contrasena)
         pyautogui.press('enter')
 
-        time.sleep(6)  # Esperar a que el cliente inicie sesión
-
-        # Seleccionar el juego (usando las coordenadas del botón del juego)
-        pyautogui.click(47, 502)  # Coordenadas de donde está el botón del juego
-        time.sleep(2.)  # Espera de 1 segundo para que el juego se seleccione
-
-        pyautogui.click(382, 376)  # Coordenadas del botón para entrar al juego
+       
 
     except Exception as e:
         messagebox.showerror("Error", f"Ocurrió un error: {e}")
